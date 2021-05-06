@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/sample.css">
+  <title>じゃんけん</title>
+</head>
+
+<body>
+  <header>
+    <h1>じゃんけん</h1>
+  </header>
+
+  <main>
+    <ul>
+      <li id="gu_btn">グー</li>
+      <li id="cho_btn">チョキ</li>
+      <li id="par_btn">パー</li>
+    </ul>
+    <div id="com_hand">コンピュータの出した手は？</div>
+    <div id="result">結果は？</div>
+  </main>
+
+  <footer>チュートリアル</footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    //ここに処理を追加
+
+    $("#gu_btn").on("click", function () {
+        const min = 0;
+        const max = 2;
+        const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+        console.log(randomNumber);
+
+        if (randomNumber == 0) {
+          $("#com_hand").text("コンピュータの出した手はチョキです。");
+          $("#result").text("結果は あたなの勝ちです。");
+          // alert("大吉");
+        } else if (randomNumber == 1) {
+          $("#com_hand").text("コンピュータの出した手はパーです。");
+          $("#result").text("結果は あたなの負けです。");
+        } else if (randomNumber == 2) {
+          $("#com_hand").text("コンピュータの出した手はグーです。");
+          $("#result").text("結果は 引き分けです。");
+        } else {
+          $("#result").text("エラー");
+          // alert("エラー");
+        }
+      });
+      
+      
+      $("#cho_btn").on("click", function () {
+          const min = 0;
+          const max = 2;
+          const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+          console.log(randomNumber);
+  
+          if (randomNumber == 0) {
+            $("#com_hand").text("コンピュータの出した手はチョキです。");
+            $("#result").text("結果は 引き分けです。");
+            // alert("大吉");
+          } else if (randomNumber == 1) {
+            $("#com_hand").text("コンピュータの出した手はパーです。");
+            $("#result").text("結果は あたなの勝ちです。");
+          } else if (randomNumber == 2) {
+            $("#com_hand").text("コンピュータの出した手はグーです。");
+            $("#result").text("結果は あたなの負けです。");
+          } else {
+            $("#result").text("エラー");
+            // alert("エラー");
+          }
+        });
+        
+        
+        $("#par_btn").on("click", function () {
+            const min = 0;
+            const max = 2;
+            const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+            console.log(randomNumber);
+    
+            if (randomNumber == 0) {
+              $("#com_hand").text("コンピュータの出した手はチョキです。");
+              $("#result").text("結果は あたなの負けです。");
+              // alert("大吉");
+            } else if (randomNumber == 1) {
+              $("#com_hand").text("コンピュータの出した手はパーです。");
+              $("#result").text("結果は 引き分けです。");
+            } else if (randomNumber == 2) {
+              $("#com_hand").text("コンピュータの出した手はグーです。");
+              $("#result").text("結果は あたなの勝ちです。");
+            } else {
+              $("#result").text("エラー");
+              // alert("エラー");
+            }
+          });
+
+
+  </script>
+
+
+
+<div class="game_start">
+<button type="submit"><a href="index.html">ゲーム画面へ</a></button>
+</div>
+
+
+
+
+</body>
+
+</html>
